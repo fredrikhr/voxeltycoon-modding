@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+  <PropertyGroup Label="BasePath">
+    <BaseOutputPath>$(MSBuildThisFileDirectory)bin\$(MSBuildProjectName)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <BasePackageOutputPath>$(MSBuildThisFileDirectory).nuget\packages\</BasePackageOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Label="SourceLink">
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DebugType Condition=" '$(DebugType)' == '' ">portable</DebugType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+  </PropertyGroup>
+  <ItemGroup Label="PackageReferences">
+    <PackageReference Include="PolySharp">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup Label="VoxelTycoon">
+    <VoxelTycoonGameDirectoryOverrideFilePath>$([MSBuild]::GetPathOfFileAbove('VoxelTycoonGameDirectory.txt', '$(MSBuildProjectDirectory)'))</VoxelTycoonGameDirectoryOverrideFilePath>
+    <VoxelTycoonGameDirectory
+      Condition="Exists('$(VoxelTycoonGameDirectoryOverrideFilePath)')"
+    >$([System.IO.File]::ReadAllText('$(VoxelTycoonGameDirectoryOverrideFilePath)').Trim())</VoxelTycoonGameDirectory>
+    <VoxelTycoonGameDirectory Condition="!Exists('$(VoxelTycoonGameDirectoryOverrideFilePath)')">$([System.IO.Path]::GetFullPath('$(Registry:HKEY_CURRENT_USER\Software\Valve\Steam@SteamPath)\steamapps\common\VoxelTycoon'))</VoxelTycoonGameDirectory>
+  </PropertyGroup>
+</Project>

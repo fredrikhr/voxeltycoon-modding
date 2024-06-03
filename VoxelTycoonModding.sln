@@ -1,0 +1,44 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "..root", "..root", "{CBF1936E-02BD-4F47-BBF1-3A5A43372CE3}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		Directory.Packages.props = Directory.Packages.props
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mods", "mods", "{FE1B977F-30CF-4DD0-A699-48F05FAA4090}"
+	ProjectSection(SolutionItems) = preProject
+		mods\Directory.Build.props = mods\Directory.Build.props
+		mods\VoxelTycoonGameDirectory.txt = mods\VoxelTycoonGameDirectory.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FredrikHr.VoxelTycoonModding.HelloVoxelWorld", "mods\FredrikHr.VoxelTycoonModding.HelloVoxelWorld\FredrikHr.VoxelTycoonModding.HelloVoxelWorld.csproj", "{07DDCD77-126D-4C50-9C2C-B9BD14BFFE70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07DDCD77-126D-4C50-9C2C-B9BD14BFFE70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DDCD77-126D-4C50-9C2C-B9BD14BFFE70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DDCD77-126D-4C50-9C2C-B9BD14BFFE70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DDCD77-126D-4C50-9C2C-B9BD14BFFE70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07DDCD77-126D-4C50-9C2C-B9BD14BFFE70} = {FE1B977F-30CF-4DD0-A699-48F05FAA4090}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B2C6176-D095-4AF1-A55A-3ED3ADCA81F6}
+	EndGlobalSection
+EndGlobal
