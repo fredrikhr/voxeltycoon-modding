@@ -28,10 +28,10 @@
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Label="VoxelTycoon">
-    <VoxelTycoonGameDirectoryOverrideFilePath>$([MSBuild]::GetPathOfFileAbove('VoxelTycoonGameDirectory.txt', '$(MSBuildProjectDirectory)'))</VoxelTycoonGameDirectoryOverrideFilePath>
-    <VoxelTycoonGameDirectory
-      Condition="Exists('$(VoxelTycoonGameDirectoryOverrideFilePath)')"
-    >$([System.IO.File]::ReadAllText('$(VoxelTycoonGameDirectoryOverrideFilePath)').Trim())</VoxelTycoonGameDirectory>
-    <VoxelTycoonGameDirectory Condition="!Exists('$(VoxelTycoonGameDirectoryOverrideFilePath)')">$([System.IO.Path]::GetFullPath('$(Registry:HKEY_CURRENT_USER\Software\Valve\Steam@SteamPath)\steamapps\common\VoxelTycoon'))</VoxelTycoonGameDirectory>
+    <VoxelTycoonInstallationDirectoryOverrideFilePath>$([MSBuild]::GetPathOfFileAbove('VoxelTycoonInstallationDirectory.txt', '$(MSBuildProjectDirectory)'))</VoxelTycoonInstallationDirectoryOverrideFilePath>
+    <VoxelTycoonInstallationDirectory
+      Condition="Exists('$(VoxelTycoonInstallationDirectoryOverrideFilePath)')"
+    >$([System.IO.File]::ReadAllText('$(VoxelTycoonInstallationDirectoryOverrideFilePath)').Trim())</VoxelTycoonInstallationDirectory>
+    <VoxelTycoonInstallationDirectory Condition="!Exists('$(VoxelTycoonInstallationDirectoryOverrideFilePath)')">$([System.IO.Path]::GetFullPath('$(Registry:HKEY_CURRENT_USER\Software\Valve\Steam@SteamPath)\steamapps\common\VoxelTycoon'))</VoxelTycoonInstallationDirectory>
   </PropertyGroup>
 </Project>

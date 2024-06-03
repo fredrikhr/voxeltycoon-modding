@@ -10,7 +10,7 @@
   <Import Project="$(MSBuildThisFileDirectory)..\Directory.Build.props" />
 
   <PropertyGroup>
-    <VoxelTycoonManagedLibraryDirectory>$(VoxelTycoonGameDirectory)\VoxelTycoon_Data\Managed</VoxelTycoonManagedLibraryDirectory>
+    <VoxelTycoonManagedLibraryDirectory>$(VoxelTycoonInstallationDirectory)\VoxelTycoon_Data\Managed</VoxelTycoonManagedLibraryDirectory>
   </PropertyGroup>
 
   <ItemGroup>
